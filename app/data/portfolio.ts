@@ -116,6 +116,23 @@ export const portfolioData: PortfolioData = {
 
   projects: [
     {
+      id: "ezman-admin",
+      title: "EZman Admin Module",
+      description:
+        "Comprehensive admin dashboard for managing the EZman ecosystem, connected to Customer, Rider, and Merchant mobile applications.",
+      role: "Full Stack Web Developer",
+      highlights: [
+        "Role-Based Access Control (RBAC) with granular permissions",
+        "Sales reports and analytics dashboard",
+        "Restaurant, Rider, and Menu management systems",
+        "System settings, audit logs, and operational monitoring",
+      ],
+      technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
+      type: "web",
+      status: "production",
+      image: "/projects/ezman-admin.svg",
+    },
+    {
       id: "ezman-customer",
       title: "EZman Food & Deliveries",
       description:
