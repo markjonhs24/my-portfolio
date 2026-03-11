@@ -38,14 +38,14 @@ export function SkillsSection({ skills }: SkillsSectionProps) {
   const groupedSkills = getSkillsByCategory(skills);
 
   return (
-    <Section id="skills" className="bg-zinc-50 dark:bg-zinc-900/50">
+    <Section id="skills" className="bg-slate-50/50 dark:bg-slate-900/30">
       <Container>
         <SectionHeader
           title="Skills & Technologies"
           subtitle="Technologies I work with in production"
         />
 
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {categoryOrder.map((category) => {
             const categorySkills = groupedSkills[category];
             if (!categorySkills?.length) return null;
@@ -53,13 +53,13 @@ export function SkillsSection({ skills }: SkillsSectionProps) {
             return (
               <div
                 key={category}
-                className="rounded-2xl bg-white dark:bg-zinc-800/50 p-6 shadow-sm border border-zinc-100 dark:border-zinc-800"
+                className="rounded-2xl bg-white dark:bg-slate-800/50 p-6 border border-slate-100 dark:border-slate-700/50 hover:border-slate-200 dark:hover:border-slate-600 transition-colors duration-200"
               >
-                <div className="flex items-center gap-2 mb-4">
+                <div className="flex items-center gap-2.5 mb-4">
                   <span className="text-xl" role="img" aria-hidden="true">
                     {categoryIcons[category]}
                   </span>
-                  <h3 className="font-semibold text-zinc-900 dark:text-zinc-100">
+                  <h3 className="font-semibold text-slate-900 dark:text-white">
                     {skillCategoryLabels[category]}
                   </h3>
                 </div>
@@ -79,7 +79,7 @@ export function SkillsSection({ skills }: SkillsSectionProps) {
 
 function SkillBadge({ name }: { name: string }) {
   return (
-    <span className="inline-flex items-center rounded-full bg-zinc-100 dark:bg-zinc-700 px-3 py-1 text-sm font-medium text-zinc-700 dark:text-zinc-300">
+    <span className="inline-flex items-center rounded-full bg-slate-100 dark:bg-slate-700/60 px-3 py-1 text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-indigo-500/10 hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors cursor-default">
       {name}
     </span>
   );

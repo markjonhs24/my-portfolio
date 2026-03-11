@@ -8,50 +8,52 @@ interface HeroSectionProps {
 
 export function HeroSection({ personal }: HeroSectionProps) {
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-16">
-      {/* Background gradient */}
+    <section className="relative min-h-screen flex items-center justify-center pt-16 bg-gradient-to-b from-slate-50 to-white dark:from-slate-900 dark:to-slate-950">
+      {/* Background gradient - subtle and professional */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-emerald-500/20 to-cyan-500/20 rounded-full blur-3xl" />
+        <div className="absolute top-1/3 left-1/3 w-[500px] h-[500px] bg-gradient-to-r from-indigo-500/10 to-violet-500/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/3 right-1/3 w-[400px] h-[400px] bg-gradient-to-r from-slate-500/10 to-indigo-500/10 rounded-full blur-3xl" />
       </div>
 
       <div className="mx-auto max-w-5xl px-6 lg:px-8 text-center">
         {/* Avatar placeholder */}
-        <div className="mx-auto mb-8 h-32 w-32 rounded-full bg-gradient-to-br from-zinc-200 to-zinc-300 dark:from-zinc-700 dark:to-zinc-800 flex items-center justify-center">
-          <span className="text-4xl font-bold text-zinc-500 dark:text-zinc-400">
-            {personal.name
-              .split(" ")
-              .map((n) => n[0])
-              .join("")}
-          </span>
+        <div className="mx-auto mb-8 h-32 w-32 rounded-full bg-gradient-to-br from-indigo-500 to-violet-600 p-[3px] shadow-lg shadow-indigo-500/25">
+          <div className="h-full w-full rounded-full bg-white dark:bg-slate-900 flex items-center justify-center">
+            <span className="text-3xl font-bold bg-gradient-to-br from-indigo-600 to-violet-600 bg-clip-text text-transparent">
+              {personal.name
+                .split(" ")
+                .map((n) => n[0])
+                .join("")}
+            </span>
+          </div>
         </div>
 
-        <h1 className="text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-5xl md:text-6xl">
+        <h1 className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl md:text-6xl">
           {personal.name}
         </h1>
 
-        <p className="mt-4 text-xl font-medium text-zinc-600 dark:text-zinc-400 sm:text-2xl">
+        <p className="mt-4 text-xl font-medium text-indigo-600 dark:text-indigo-400 sm:text-2xl">
           {personal.role}
         </p>
 
-        <p className="mt-2 text-lg text-zinc-500 dark:text-zinc-500">
+        <p className="mt-2 text-lg text-slate-500 dark:text-slate-400">
           {personal.tagline}
         </p>
 
-        <p className="mx-auto mt-8 max-w-2xl text-base leading-7 text-zinc-600 dark:text-zinc-400">
+        <p className="mx-auto mt-8 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300">
           {personal.summary}
         </p>
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
           <a
             href="#projects"
-            className="inline-flex items-center justify-center rounded-full bg-zinc-900 dark:bg-zinc-100 px-6 py-3 text-sm font-semibold text-white dark:text-zinc-900 shadow-sm hover:bg-zinc-700 dark:hover:bg-zinc-300 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-900"
+            className="inline-flex items-center justify-center rounded-full bg-indigo-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-indigo-500/30 hover:bg-indigo-700 hover:shadow-indigo-500/40 transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
           >
             View Projects
           </a>
           <a
             href="#contact"
-            className="inline-flex items-center justify-center rounded-full border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-900 px-6 py-3 text-sm font-semibold text-zinc-900 dark:text-zinc-100 shadow-sm hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors"
+            className="inline-flex items-center justify-center rounded-full border border-slate-200 dark:border-slate-700 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm px-6 py-3 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 hover:border-slate-300 dark:hover:border-slate-600 transition-all duration-200"
           >
             Get in Touch
           </a>
@@ -61,7 +63,7 @@ export function HeroSection({ personal }: HeroSectionProps) {
         <div className="mt-16 animate-bounce">
           <a
             href="#about"
-            className="inline-block text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors"
+            className="inline-block text-slate-400 hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors"
             aria-label="Scroll to about section"
           >
             <svg

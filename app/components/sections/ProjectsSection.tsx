@@ -40,36 +40,36 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
 
 function ProjectCard({ project }: { project: Project }) {
   return (
-    <article className="group relative flex flex-col overflow-hidden rounded-2xl bg-white dark:bg-zinc-800/50 shadow-sm border border-zinc-100 dark:border-zinc-800 transition-all hover:shadow-md hover:border-zinc-200 dark:hover:border-zinc-700">
+    <article className="group relative flex flex-col overflow-hidden rounded-2xl bg-white dark:bg-slate-800/60 border border-slate-100 dark:border-slate-700/50 shadow-sm hover:shadow-lg hover:shadow-slate-200/50 dark:hover:shadow-slate-900/50 hover:border-slate-200 dark:hover:border-slate-600 transition-all duration-300">
       {/* Project image/icon placeholder */}
-      <div className="relative h-48 bg-gradient-to-br from-zinc-100 to-zinc-200 dark:from-zinc-800 dark:to-zinc-900 flex items-center justify-center">
+      <div className="relative h-48 bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-900 flex items-center justify-center">
         <div className="text-center">
           <span className="text-5xl" role="img" aria-hidden="true">
             {typeIcons[project.type]}
           </span>
-          <p className="mt-2 text-xs font-medium text-zinc-500 dark:text-zinc-400 uppercase tracking-wide">
+          <p className="mt-2 text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wide">
             {typeLabels[project.type]}
           </p>
         </div>
         {/* Status badge */}
         <div className="absolute top-4 right-4">
-          <span className="inline-flex items-center gap-1 rounded-full bg-emerald-100 dark:bg-emerald-900/30 px-2.5 py-1 text-xs font-medium text-emerald-700 dark:text-emerald-400">
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 dark:bg-emerald-500/10 px-2.5 py-1 text-xs font-medium text-emerald-600 dark:text-emerald-400 ring-1 ring-emerald-500/20">
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
             {project.status === "production" ? "Live" : "Dev"}
           </span>
         </div>
       </div>
 
       <div className="flex flex-1 flex-col p-6">
-        <h3 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100">
+        <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
           {project.title}
         </h3>
 
-        <p className="mt-1 text-sm text-zinc-500 dark:text-zinc-400">
+        <p className="mt-1 text-sm text-indigo-600 dark:text-indigo-400 font-medium">
           {project.role}
         </p>
 
-        <p className="mt-3 text-sm leading-6 text-zinc-600 dark:text-zinc-400">
+        <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
           {project.description}
         </p>
 
@@ -78,10 +78,10 @@ function ProjectCard({ project }: { project: Project }) {
           {project.highlights.slice(0, 3).map((highlight, idx) => (
             <li
               key={idx}
-              className="flex items-start gap-2 text-sm text-zinc-600 dark:text-zinc-400"
+              className="flex items-start gap-2 text-sm text-slate-600 dark:text-slate-400"
             >
               <svg
-                className="mt-0.5 h-4 w-4 flex-shrink-0 text-emerald-500"
+                className="mt-0.5 h-4 w-4 flex-shrink-0 text-indigo-500"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -104,7 +104,7 @@ function ProjectCard({ project }: { project: Project }) {
             {project.technologies.slice(0, 5).map((tech) => (
               <span
                 key={tech}
-                className="inline-flex items-center rounded-md bg-zinc-100 dark:bg-zinc-700 px-2 py-1 text-xs font-medium text-zinc-600 dark:text-zinc-300"
+                className="inline-flex items-center rounded-md bg-slate-100 dark:bg-slate-700/50 px-2.5 py-1 text-xs font-medium text-slate-600 dark:text-slate-300 ring-1 ring-slate-200/50 dark:ring-slate-600/50"
               >
                 {tech}
               </span>
@@ -120,7 +120,7 @@ function ProjectCard({ project }: { project: Project }) {
                 href={project.links.website}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-sm font-medium text-zinc-900 dark:text-zinc-100 hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors"
+                className="inline-flex items-center gap-1.5 text-sm font-medium text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors"
               >
                 <svg
                   className="h-4 w-4"

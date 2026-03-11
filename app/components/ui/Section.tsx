@@ -27,11 +27,11 @@ interface SectionHeaderProps {
 export function SectionHeader({ title, subtitle }: SectionHeaderProps) {
   return (
     <div className="mb-12">
-      <h2 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-3xl">
+      <h2 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-3xl">
         {title}
       </h2>
       {subtitle && (
-        <p className="mt-2 text-lg text-zinc-600 dark:text-zinc-400">
+        <p className="mt-3 text-lg text-slate-600 dark:text-slate-400">
           {subtitle}
         </p>
       )}

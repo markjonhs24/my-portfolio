@@ -37,15 +37,15 @@ const contactIcons: Record<ContactChannel["type"], ReactNode> = {
 };
 
 const contactColors: Record<ContactChannel["type"], string> = {
-  email: "hover:bg-red-50 dark:hover:bg-red-900/20 hover:text-red-600 dark:hover:text-red-400 hover:border-red-200 dark:hover:border-red-800",
-  telegram: "hover:bg-blue-50 dark:hover:bg-blue-900/20 hover:text-blue-600 dark:hover:text-blue-400 hover:border-blue-200 dark:hover:border-blue-800",
-  viber: "hover:bg-purple-50 dark:hover:bg-purple-900/20 hover:text-purple-600 dark:hover:text-purple-400 hover:border-purple-200 dark:hover:border-purple-800",
-  whatsapp: "hover:bg-green-50 dark:hover:bg-green-900/20 hover:text-green-600 dark:hover:text-green-400 hover:border-green-200 dark:hover:border-green-800",
+  email: "hover:bg-rose-50 dark:hover:bg-rose-500/10 hover:text-rose-600 dark:hover:text-rose-400 hover:border-rose-200 dark:hover:border-rose-500/30",
+  telegram: "hover:bg-sky-50 dark:hover:bg-sky-500/10 hover:text-sky-600 dark:hover:text-sky-400 hover:border-sky-200 dark:hover:border-sky-500/30",
+  viber: "hover:bg-violet-50 dark:hover:bg-violet-500/10 hover:text-violet-600 dark:hover:text-violet-400 hover:border-violet-200 dark:hover:border-violet-500/30",
+  whatsapp: "hover:bg-emerald-50 dark:hover:bg-emerald-500/10 hover:text-emerald-600 dark:hover:text-emerald-400 hover:border-emerald-200 dark:hover:border-emerald-500/30",
 };
 
 export function ContactSection({ contacts }: ContactSectionProps) {
   return (
-    <Section id="contact" className="bg-zinc-50 dark:bg-zinc-900/50">
+    <Section id="contact" className="bg-slate-50/50 dark:bg-slate-900/30">
       <Container>
         <div className="mx-auto max-w-2xl text-center">
           <SectionHeader
@@ -60,13 +60,13 @@ export function ContactSection({ contacts }: ContactSectionProps) {
                 href={contact.href}
                 target={contact.type === "email" ? undefined : "_blank"}
                 rel={contact.type === "email" ? undefined : "noopener noreferrer"}
-                className={`group flex items-center gap-4 rounded-xl bg-white dark:bg-zinc-800/50 p-4 border border-zinc-100 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 transition-all ${contactColors[contact.type]}`}
+                className={`group flex items-center gap-4 rounded-xl bg-white dark:bg-slate-800/50 p-4 border border-slate-100 dark:border-slate-700/50 text-slate-600 dark:text-slate-400 transition-all duration-200 ${contactColors[contact.type]}`}
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-zinc-100 dark:bg-zinc-700 group-hover:bg-transparent transition-colors">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-700/50 group-hover:bg-transparent transition-colors">
                   {contactIcons[contact.type]}
                 </div>
                 <div className="text-left">
-                  <p className="text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+                  <p className="text-sm font-semibold text-slate-900 dark:text-white">
                     {contact.label}
                   </p>
                   <p className="text-sm">{contact.value}</p>
@@ -75,7 +75,7 @@ export function ContactSection({ contacts }: ContactSectionProps) {
             ))}
           </div>
 
-          <p className="mt-8 text-sm text-zinc-500 dark:text-zinc-500">
+          <p className="mt-8 text-sm text-slate-500 dark:text-slate-400">
             I typically respond within 24-48 hours
           </p>
         </div>
